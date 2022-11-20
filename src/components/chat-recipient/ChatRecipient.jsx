@@ -26,7 +26,7 @@ export default function ChatRecipient() {
                 <List>
                     {
                         dummy.map((c) => (
-                            <ListItem disablePadding>
+                            <ListItem key={c.name} disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <AccountCircleIcon fontSize='large' />
@@ -34,6 +34,7 @@ export default function ChatRecipient() {
                                     <ListItemText primary={c.name} />
                                 </ListItemButton>
                             </ListItem>
+                            
                         ))
                     }
                 </List>

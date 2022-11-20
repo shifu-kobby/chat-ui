@@ -3,6 +3,7 @@
     flex-direction: column;
     background-color: white;
     width: 30%;
+    border: solid #ccc;
 }
 
 .chatRecipientHeader {
