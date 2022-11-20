@@ -1,0 +1,9 @@
+.chatBody {
+    height: 100%;
+    background-color: rgb(234, 230, 230);
+}
+
+.chatBodyHistory {
+    width: 100%;
+    height: 95%;
+}

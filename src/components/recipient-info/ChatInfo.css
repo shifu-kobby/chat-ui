@@ -1,0 +1,25 @@
+.recipientInfo {
+    background-color: white;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: solid black;
+    /* border-radius: 0px 0px 25px 25px; */
+}
+
+.recipientInfoAccount {
+    margin-left: 20px;
+}
+
+.recipientInfoMenu {
+    margin-right: 20px;
+}
+
+.recipientInfoDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}

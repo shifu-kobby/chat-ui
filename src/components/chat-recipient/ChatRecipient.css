@@ -1,0 +1,14 @@
+.chatRecipient {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 30%;
+}
+
+.chatRecipientHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}

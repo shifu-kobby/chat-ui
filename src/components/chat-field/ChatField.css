@@ -1,0 +1,10 @@
+.chatField {
+    height: 10px;
+    width: 100%;
+    background-color: white;
+    /* position: fixed;
+    bottom: 50px; */
+}
+.chatBodyTextField {
+    width: 100%;
+}

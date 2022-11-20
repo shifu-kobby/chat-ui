@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 820px;
+    /* width: 1200px; */
+}
+
+.homeChatView {
+    display: flex;
+    flex-direction: column;
+    height: 94%;
+    width: 100%;
+}
