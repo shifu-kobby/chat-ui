@@ -1,0 +1,21 @@
+.login {
+    background-color: white;
+    align-items: center;
+}
+
+.login > h1 {
+    color: #ccc;
+}
+
+.loginInputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    border: solid black;
+    height: 400px;
+    width: 400px;
+    border-radius: 25px;
+    margin: auto;
+}
