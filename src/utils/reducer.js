@@ -1,13 +1,14 @@
 export const initialState = {
     user: {
         username: "",
-        socket: "",
-        messages: [{
-            sender: "",
-            text: "",
-            room: ""
-        }]
-    }
+        password: "",
+        socket: ""
+    },
+    messages: [{
+        sender: "",
+        text: "",
+        room: ""
+    }]
 };
 
 const reducer = (state, action) => {
@@ -19,19 +20,22 @@ const reducer = (state, action) => {
                 ...state,
                 user: {
                     ...state.user,
-                    username: action.item
+                    username: action.item.password,
+                    password: action.item.password
                 }
             };
-        case 'CONNECT':
+        case 'LOGIN':
             //set user socket instance
             return {
                 ...state,
                 user: {
                     ...state.user,
-                    socket: action.item
+                    username: action.item.username,
+                    password: action.item.password,
+                    socket: action.item.socket
                 }
             };
-        case 'DISCONNECT':
+        case 'LOGOUT':
             //set disconnect user socket instance
             return {
                 ...state,
@@ -43,10 +47,7 @@ const reducer = (state, action) => {
         case 'UPDATE MESSAGES':
             return {
                 ...state,
-                user: {
-                    ...state.user,
-                    messages: [...state.user.message, action.item]
-                }
+                messages: [...state.message, action.item]
             }
         default:
             return state;

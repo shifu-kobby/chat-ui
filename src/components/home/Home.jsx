@@ -5,8 +5,17 @@ import ChatRecipient from '../chat-recipient/ChatRecipient';
 import ChatInfo from '../chat-info/ChatInfo';
 import './Home.css';
 import Divider from '@mui/material/Divider';
+import { StateContext } from '../../utils/StateProvider';
 
 export default class Home extends React.Component {
+    static contextType = StateContext;
+
+    componentDidMount() {
+        const data = this.context
+
+        console.log(data)
+    }
+
     render() {
         return (
             <div className='home'>

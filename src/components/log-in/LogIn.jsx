@@ -3,10 +3,17 @@ import './LogIn.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+import { useStateValue } from '../../utils/StateProvider';
+import SocketClient from '../../utils/client';
+
 
 export default function LogIn() {
+    const [{}, dispatch] = useStateValue();
     const [username, setUsername] = React.useState('');
     const [password, setPasssword] = React.useState('');
+    const navigate = useNavigate();
+
 
     const handleChange = (event) => {
         if (event.target.name === "username") {
@@ -18,7 +25,20 @@ export default function LogIn() {
     }
 
     const handleSubmit = () => {
-        console.log(username, password);
+        dispatch({
+            type: 'LOGIN',
+            item: {
+                username: username,
+                password: password,
+                socket: createSocketInstance()
+            }
+        })
+        navigate("/homepage");
+    }
+
+    const createSocketInstance = () => {
+        let user = new SocketClient(username);
+        return user;
     }
 
     return (
