@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChatInfo.css';
+import './ChannelInfo.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 

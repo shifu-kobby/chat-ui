@@ -2,13 +2,15 @@ export const initialState = {
     user: {
         username: "",
         password: "",
-        socket: ""
+        socket: "",
+        status: "offline",
     },
     messages: [{
         sender: "",
         text: "",
         room: ""
-    }]
+    }],
+    activeChannel: ""
 };
 
 const reducer = (state, action) => {
@@ -32,7 +34,8 @@ const reducer = (state, action) => {
                     ...state.user,
                     username: action.item.username,
                     password: action.item.password,
-                    socket: action.item.socket
+                    socket: action.item.socket,
+                    status: action.item.status
                 }
             };
         case 'LOGOUT':

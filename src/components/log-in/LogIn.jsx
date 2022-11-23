@@ -30,7 +30,8 @@ export default function LogIn() {
             item: {
                 username: username,
                 password: password,
-                socket: createSocketInstance()
+                socket: createSocketInstance(),
+                status: "online"
             }
         })
         navigate("/homepage");

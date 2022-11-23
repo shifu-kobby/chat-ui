@@ -1,8 +1,8 @@
 import React from 'react';
 import ChatBody from '../chat-body/ChatBody';
 import ChatField from '../chat-field/ChatField';
-import ChatRecipient from '../chat-recipient/ChatRecipient';
-import ChatInfo from '../chat-info/ChatInfo';
+import ChatRecipient from '../channel/Channel';
+import ChatInfo from '../channel-info/ChannelInfo';
 import './Home.css';
 import Divider from '@mui/material/Divider';
 import { StateContext } from '../../utils/StateProvider';
@@ -11,7 +11,7 @@ export default class Home extends React.Component {
     static contextType = StateContext;
 
     componentDidMount() {
-        const data = this.context
+        const [data, dispatch] = this.context
 
         console.log(data)
     }
