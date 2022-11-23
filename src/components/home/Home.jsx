@@ -1,8 +1,8 @@
 import React from 'react';
 import ChatBody from '../chat-body/ChatBody';
 import ChatField from '../chat-field/ChatField';
-import ChatRecipient from '../channel/Channel';
-import ChatInfo from '../channel-info/ChannelInfo';
+import Channel from '../channel/Channel';
+import ChannelInfo from '../channel-info/ChannelInfo';
 import './Home.css';
 import Divider from '@mui/material/Divider';
 import { StateContext } from '../../utils/StateProvider';
@@ -19,9 +19,9 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className='home'>
-                <ChatRecipient />
+                <Channel />
                 <div className='homeChatView'>
-                    <ChatInfo />
+                    <ChannelInfo />
                     <Divider />
                     <ChatBody />
                     <Divider />

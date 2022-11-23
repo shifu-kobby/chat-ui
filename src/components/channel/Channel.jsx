@@ -11,14 +11,26 @@ import { StateContext } from '../../utils/StateProvider';
 
 
 const dummy = [
-    { name: "user1" },
-    { name: "user2" },
-    { name: "user3" },
+    { name: "user1", id:1 },
+    { name: "user2", id:2 },
+    { name: "user3", id:3 },
 ]
 
-export default function ChatRecipient() {
+export default function Channel() {
     const [data, dispatch] = useContext(StateContext);
     console.log(data);
+
+    const updateActiveChannel = (id) => {
+        const currentChannel = dummy.filter((d) => d.id === id)[0];
+        dispatch({
+            type: "UPDATE ACTIVE CHANNEL",
+            item: {
+                id: currentChannel.id,
+                name: currentChannel.name
+            }
+        })
+    }
+
     return (
         <div className='chatRecipient'>
             <div className='chatRecipientHeader'>
@@ -31,7 +43,7 @@ export default function ChatRecipient() {
                     {
                         dummy.map((c) => (
                             <ListItem key={c.name} disablePadding>
-                                <ListItemButton>
+                                <ListItemButton onClick={() => updateActiveChannel(c.id)}>
                                     <ListItemIcon>
                                         <AccountCircleIcon fontSize='large' />
                                     </ListItemIcon>

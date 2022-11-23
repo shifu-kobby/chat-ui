@@ -10,7 +10,10 @@ export const initialState = {
         text: "",
         room: ""
     }],
-    activeChannel: ""
+    activeChannel: {
+        id: "",
+        name: ""
+    }
 };
 
 const reducer = (state, action) => {
@@ -51,7 +54,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 messages: [...state.message, action.item]
-            }
+            };
+            case 'UPDATE ACTIVE CHANNEL':
+            return {
+                ...state,
+                activeChannel: action.item
+            };
         default:
             return state;
     }
