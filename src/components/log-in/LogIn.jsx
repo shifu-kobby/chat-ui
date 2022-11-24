@@ -9,7 +9,7 @@ import SocketClient from '../../utils/client';
 
 
 export default function LogIn() {
-    const [{}, dispatch] = useStateValue();
+    const [data, dispatch] = useStateValue();
     const [username, setUsername] = React.useState('');
     const [password, setPasssword] = React.useState('');
     const navigate = useNavigate();
@@ -34,6 +34,7 @@ export default function LogIn() {
                 status: "online"
             }
         })
+        
         navigate("/homepage");
     }
 

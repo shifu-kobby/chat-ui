@@ -6,6 +6,7 @@ export const initialState = {
         status: "offline",
     },
     messages: [{
+        id: "",
         sender: "",
         text: "",
         room: ""
@@ -53,7 +54,7 @@ const reducer = (state, action) => {
         case 'UPDATE MESSAGES':
             return {
                 ...state,
-                messages: [...state.message, action.item]
+                messages: [...state.messages, action.item]
             };
             case 'UPDATE ACTIVE CHANNEL':
             return {

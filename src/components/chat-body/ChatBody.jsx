@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './ChatBody.css';
 import Chip from '@mui/material/Chip';
+import { StateContext } from '../../utils/StateProvider';
 
 
 const dummy = [
@@ -31,16 +32,22 @@ const dummy = [
 ]
 
 export default function ChatBody() {
+    const [data, dispatch] = useContext(StateContext);
+    let messages = [];
 
-    let currentUser = "user1";
+
+    useEffect(() => {
+        messages.push(...data.user.socket.getMessages());
+    }, [data.user.socket, messages])
+
 
     return (
         <div className='chatBody'>
             {
-                dummy.map((message) => (
+                messages?.map((message) => (
                     <div key={message.id} className='chatBodyBubbleContainer'>
                         <Chip
-                            className={`chatBodyBubble ${currentUser === message.sender ? "sender" : "recipient"}`}
+                            className={`chatBodyBubble ${data.user.username === message.sender ? "sender" : "recipient"}`}
                             label={message.text}
                         />
                     </div>

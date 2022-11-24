@@ -29,8 +29,12 @@ export default class SocketClient {
     }
 
     getMessages() {
+        let messages = [];
         this.socketClient.on('chat', (message) => {
-            console.log(`Message received: ${message}`)
+            if (message) {
+                messages.push(message);
+            }
         })
+        return messages;
     }
 }

@@ -1,4 +1,4 @@
-.chatRecipient {
+.channel {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -6,10 +6,20 @@
     border: solid #ccc;
 }
 
-.chatRecipientHeader {
+.channelHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     margin: 10px;
+}
+
+h3 {
+    color: #ccc;
+}
+
+.channels {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
