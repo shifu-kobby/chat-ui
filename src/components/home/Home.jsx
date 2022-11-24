@@ -1,11 +1,10 @@
 import React from 'react';
-import ChatBody from '../chat-body/ChatBody';
-import ChatField from '../chat-field/ChatField';
 import Channel from '../channel/Channel';
 import ChannelInfo from '../channel-info/ChannelInfo';
 import './Home.css';
 import Divider from '@mui/material/Divider';
 import { StateContext } from '../../utils/StateProvider';
+import Chat from '../chat/Chat';
 
 export default class Home extends React.Component {
     static contextType = StateContext;
@@ -21,9 +20,7 @@ export default class Home extends React.Component {
                 <div className='homeChatView'>
                     <ChannelInfo />
                     <Divider />
-                    <ChatBody />
-                    <Divider />
-                    <ChatField />
+                    <Chat />
                 </div>
             </div>
         )

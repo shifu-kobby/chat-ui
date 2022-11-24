@@ -35,6 +35,7 @@ export default class SocketClient {
                 messages.push(message);
             }
         })
+        console.log(messages);
         return messages;
     }
 }
