@@ -19,10 +19,10 @@ export default class SocketClient {
         })
     }
 
-    sendMessage(username, room, message) {
+    sendMessage(room, message) {
         console.log("attempting to send message")
         this.socketClient.emit("message", {
-            "username": username,
+            "username": this.username,
             "room": room,
             "message": message
         });

@@ -12,8 +12,6 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         const [data, dispatch] = this.context
-
-        console.log(data)
     }
 
     render() {

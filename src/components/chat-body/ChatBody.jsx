@@ -33,11 +33,12 @@ const dummy = [
 
 export default function ChatBody() {
     const [data, dispatch] = useContext(StateContext);
-    let messages = [];
+    const [messages, setMessages] = useState([]);
 
 
     useEffect(() => {
-        messages.push(...data.user.socket.getMessages());
+        setMessages(...data.user.socket.getMessages());
+        console.log(messages)
     }, [data.user.socket, messages])
 
 

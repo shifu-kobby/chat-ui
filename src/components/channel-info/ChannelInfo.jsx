@@ -6,7 +6,6 @@ import { StateContext } from '../../utils/StateProvider';
 
 export default function ChannelInfo() {
     const [data, dispatch] = useContext(StateContext);
-    console.log(data);
 
     return (
         <div className='recipientInfo'>

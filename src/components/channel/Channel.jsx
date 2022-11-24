@@ -30,7 +30,6 @@ const channels = [
 
 export default function Channel() {
     const [data, dispatch] = useContext(StateContext);
-    console.log(data);
 
     const updateActiveChannel = (id) => {
         const currentChannel = dummy.filter((d) => d.id === id)[0];
@@ -44,14 +43,18 @@ export default function Channel() {
     }
 
     const updateActiveChannelGroup = (room) => {
+        console.log(channels, room)
         const currentChannel = channels.filter((d) => d.room === room)[0];
-        dispatch({
-            type: "UPDATE ACTIVE CHANNEL",
-            item: {
-                id: currentChannel.room,
-                name: currentChannel.name
-            }
-        })
+        console.log(currentChannel)
+        if (currentChannel) {
+            dispatch({
+                type: "UPDATE ACTIVE CHANNEL",
+                item: {
+                    id: currentChannel.room,
+                    name: currentChannel.name
+                }
+            })
+        }
     }
     const joinRoom = (room) => {
         data.user.socket.joinRoom(room)
@@ -87,9 +90,9 @@ export default function Channel() {
                 <List>
                     {
                         channels.map((c) => (
-                            <div key={c.room}  className='channels'>
+                            <div key={c?.room} className='channels'>
                                 <ListItem disablePadding>
-                                    <ListItemButton onClick={() => updateActiveChannelGroup(c.id)}>
+                                    <ListItemButton onClick={() => updateActiveChannelGroup(c.room)}>
                                         <ListItemIcon>
                                             <AccountCircleIcon fontSize='large' />
                                         </ListItemIcon>
